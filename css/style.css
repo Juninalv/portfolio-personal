@@ -316,6 +316,11 @@ header {
   #menu-toggle:checked + .menu-icon + .menu {
     display: flex;
   }
+  .hero {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 
   .hero h1 {
     font-size: 32px;
