@@ -1,25 +1,43 @@
-/* Reset básico */
+/* =========================
+   RESET / BASE
+========================= */
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Tamanho dos elementos funcionar de forma lógica (usar sempre) */
+  box-sizing: border-box;
 }
 
-/* Corpo do site */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Montserrat";
-  background-color: #0f0f0f; /* Cor da página */
-  color: #fff; /* Cor da letra */
+  font-family: "Montserrat", sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+  line-height: 1.6;
 }
 
-/* Container padrão */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
+
 header {
   background-color: #000;
   position: sticky;
@@ -27,20 +45,41 @@ header {
   z-index: 1000;
 }
 
-header .container {
-  display: flex; /* Ativa o Flexbox */
-  justify-content: space-between; /* Joga um item para a direita e outro pra esquerda */
-  align-items: center; /* Centraliza verticalmente */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
 }
 
-/* Menu */
-nav a {
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 30px;
+}
+
+/* MENU */
+#menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
   position: relative;
   color: #fff;
-  margin-left: 20px;
   text-decoration: none;
 }
-nav a::after {
+
+.menu a::after {
   content: "";
   position: absolute;
   width: 0;
@@ -51,41 +90,34 @@ nav a::after {
   transition: 0.3s;
 }
 
-nav a:hover::after {
+.menu a:hover::after {
   width: 100%;
 }
 
-/* Hero */
+/* HAMBURGUER */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
 .hero {
-  height: 90vh; /* vh relativo a tela usada (90% da tela) */
-  background: url("/img/hero-exemplo.jpeg") no-repeat center center/cover; /* Define a imagem, não repete a imagem, centraliza vertical e horizontal e faz a imgem cobrir toda a área */
+  height: 90vh;
+  background: url("/img/hero-exemplo.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
   text-align: center;
   position: relative;
 }
-.hero h1 {
-  font-size: 56px;
-  margin-bottom: 20px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
 
-.hero p {
-  font-size: 20px;
-  margin-bottom: 30px;
-  font-weight: 400;
-}
-
-/* ::before cria uma camada antes do conteúdo */
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -94,25 +126,37 @@ nav a:hover::after {
   z-index: 1;
 }
 
-/* Botão */
+.hero h1 {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* BOTÃO GLOBAL */
 .btn {
   display: inline-block;
   padding: 12px 24px;
   background-color: #00ff88;
   color: #000;
-  text-decoration: none;
   font-weight: bold;
-  border-radius: 5px;
-  transition: 0.3s;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/* Aplica estilo quando passa o mouse */
 .btn:hover {
   background-color: #00cc6a;
-  transform: scale(1.05);
+  transform: translateY(-2px);
 }
 
-/* SOBRE */
+/* =========================
+   SOBRE
+========================= */
+
 .about {
   padding: 80px 0;
   background-color: #111;
@@ -135,22 +179,18 @@ nav a:hover::after {
 
 .about-text p {
   margin-bottom: 15px;
-  line-height: 1.6;
 }
 
 .about-image {
-  flex: 1; /* Cada lado ocupa metade do espaço */
+  flex: 1;
 }
 
-.about-image img {
-  width: 100%;
-  border-radius: 10px;
-}
+/* =========================
+   SERVIÇOS
+========================= */
 
-/* SERVIÇOS */
 .services {
   padding: 80px 0;
-  background-color: #0f0f0f;
   text-align: center;
 }
 
@@ -159,20 +199,23 @@ nav a:hover::after {
   margin-bottom: 40px;
 }
 
-/* GRID DE CARDS */
 .services-grid {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
-/* CARD */
 .service-card {
   flex: 1;
+  min-width: 250px;
   background-color: #1a1a1a;
   padding: 30px;
   border-radius: 10px;
-  transition: 0.3s;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
 }
 
 .service-card h3 {
@@ -181,16 +224,12 @@ nav a:hover::after {
 
 .service-card p {
   font-size: 14px;
-  line-height: 1.5;
 }
 
-/* EFEITO HOVER */
-.service-card:hover {
-  transform: translateY(-10px);
-  background-color: #222;
-}
+/* =========================
+   RESULTADOS
+========================= */
 
-/* RESULTADOS */
 .results {
   padding: 80px 0;
   background-color: #111;
@@ -202,31 +241,31 @@ nav a:hover::after {
   margin-bottom: 40px;
 }
 
-/* GRID DE IMAGENS */
 .results-grid {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .result-item {
   flex: 1;
+  min-width: 250px;
   overflow: hidden;
   border-radius: 10px;
 }
 
-/* IMAGEM */
 .result-item img {
-  width: 100%;
-  display: block;
   transition: 0.3s;
 }
 
-/* EFEITO HOVER */
 .result-item:hover img {
   transform: scale(1.1);
 }
 
-/* CONTATO */
+/* =========================
+   CONTATO
+========================= */
+
 .contact {
   padding: 80px 0;
   background: linear-gradient(135deg, #00ff88, #00cc6a);
@@ -244,7 +283,7 @@ nav a:hover::after {
   font-size: 18px;
 }
 
-/* Botão nessa seção */
+/* botão ajustado no contato */
 .contact .btn {
   background-color: #000;
   color: #00ff88;
@@ -254,28 +293,30 @@ nav a:hover::after {
   background-color: #111;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* =========================
+   RESPONSIVO
+========================= */
 
 @media (max-width: 768px) {
-  /* MENU */
-  header .container {
-    flex-direction: column;
-    gap: 10px;
+  .menu-icon {
+    display: block;
   }
 
-  nav {
+  .menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #000;
+    width: 200px;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+  }
+
+  #menu-toggle:checked + .menu-icon + .menu {
     display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
-  nav a {
-    margin: 5px 0;
-  }
-
-  /* HERO */
   .hero h1 {
     font-size: 32px;
   }
@@ -284,20 +325,15 @@ html {
     font-size: 16px;
   }
 
-  /* SOBRE */
   .about-content {
     flex-direction: column;
   }
 
-  /* SERVIÇOS */
-  .services-grid {
-    flex-direction: column;
-  }
-
-  /* RESULTADOS */
+  .services-grid,
   .results-grid {
     flex-direction: column;
   }
+
   .container {
     padding: 15px;
   }

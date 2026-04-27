@@ -1,41 +1,52 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Fonte -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <title>Personal Trainer</title>
+
+    <title>Personal Trainer | Juninho Alves</title>
   </head>
+
   <body>
+    <!-- HEADER -->
     <header>
-      <!-- Topo do Site -->
-      <div class="container">
-        <h2>Juninho Alves</h2>
-        <nav>
-          <!-- Área de navegação -->
+      <div class="container header-content">
+        <div class="logo">
+          <img src="img/dumbels.png" alt="Logo Personal Trainer" />
+          <span>Juninho Alves</span>
+        </div>
+
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <nav class="menu">
           <a href="#sobre">Sobre</a>
-          <a href="#serviços">Serviços</a>
+          <a href="#servicos">Serviços</a>
           <a href="#resultados">Resultados</a>
           <a href="#contato">Contato</a>
         </nav>
       </div>
     </header>
 
+    <!-- HERO -->
     <section class="hero" id="home">
-      <!-- Divide o site em sessões -->
       <div class="container">
-        <!-- Container serve para centralizar e organizar o conteúdo -->
         <h1>Transforme seu corpo e sua mente</h1>
         <p>Treinamento personalizado para resultados reais</p>
-        <a class="btn" href="">Começar agora</a>
-        <!-- Btn = botão -->
+        <a class="btn" href="#contato">Começar agora</a>
       </div>
     </section>
 
+    <!-- SOBRE -->
     <section class="about" id="sobre">
       <div class="container about-content">
         <div class="about-text">
@@ -52,12 +63,13 @@
         </div>
 
         <div class="about-image">
-          <img src="/img/sobremim-exemplo.jpeg" alt="Treinador" />
+          <img src="img/sobremim-exemplo.jpeg" alt="Treinador em treino" />
         </div>
       </div>
     </section>
 
-    <section class="services" id="serviços">
+    <!-- SERVIÇOS -->
+    <section class="services" id="servicos">
       <div class="container">
         <h2>Serviços</h2>
 
@@ -83,26 +95,28 @@
       </div>
     </section>
 
+    <!-- RESULTADOS -->
     <section class="results" id="resultados">
       <div class="container">
         <h2>Resultados Reais</h2>
 
         <div class="results-grid">
           <div class="result-item">
-            <img src="/img/resultado-exemplo1.jpeg" alt="Resultado 1" />
+            <img src="img/resultado-exemplo1.jpeg" alt="Resultado aluno 1" />
           </div>
 
           <div class="result-item">
-            <img src="/img/resultado-exemplo2.jpeg" alt="Resultado 2" />
+            <img src="img/resultado-exemplo2.jpeg" alt="Resultado aluno 2" />
           </div>
 
           <div class="result-item">
-            <img src="/img/resultado-exemplo3.jpeg" alt="Resultado 3" />
+            <img src="img/resultado-exemplo3.jpeg" alt="Resultado aluno 3" />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CONTATO -->
     <section class="contact" id="contato">
       <div class="container">
         <h2>Pronto para começar sua transformação?</h2>
